@@ -21,7 +21,11 @@ a{color:inherit}a:hover{color:inherit}
 .nav a{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:12px 0}
 .nav a:hover{color:var(--fg)}
 .brand{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--fg);padding:2px 10px}
-.brand .nm{font-family:'Thunder LC','Geist',sans-serif;font-size:36px;line-height:.95;letter-spacing:.04em}
+.brand .nm{font-family:'Geist Mono',monospace;font-weight:500;font-size:15px;line-height:1;letter-spacing:.08em}
+.brand{padding:8px 10px}
+.hl{display:flex;align-items:center;gap:6px}
+.sky-m{display:none}
+[hidden]{display:none !important}
 .brand .ul{display:block;height:1px;width:26px;background:var(--fg);margin-top:7px;transition:width .35s ease}
 .brand:hover .ul,.brand:focus-visible .ul{width:100%}
 .right{display:flex;justify-content:flex-end;align-items:center;gap:8px}
@@ -107,10 +111,10 @@ a{color:inherit}a:hover{color:inherit}
 .twos .tile .ph{height:440px}
 }
 @media (max-width:760px){
-.nav a,.cta{display:none}
+.nav,.cta,.sky-d{display:none}.sky-m{display:inline-block}
 .slot{white-space:normal}.menuBtn{display:inline-flex;align-items:center}
 .hdr{padding:10px 14px}
-.brand .nm{font-size:30px}
+.brand .nm{font-size:14px}
 .state{padding:72px 20px 64px}
 .twos{grid-template-columns:1fr}
 .twos .tile .ph{height:420px}
@@ -130,18 +134,23 @@ a{color:inherit}a:hover{color:inherit}
 <div data-side="agency" class="root t-light"><script>(function(){try{var t=localStorage.getItem('theme-agency');if(t){var r=document.querySelector('.root');r.classList.remove('t-dark','t-light');r.classList.add(t);}}catch(e){}})();</script>
 
 <header class="hdr">
+  <div class="hl"><button class="sky sky-m" data-act="toggleTheme" aria-label="Switch to dark mode">
+      <span class="sun"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"></path></svg></span>
+      <span class="moon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"></path></svg></span>
+    </button>
   <nav class="nav" aria-label="Agency sections">
     <a href="#work">Work</a>
     <a href="#studio">Studio</a>
     <a href="#brands">Brands</a>
     <a href="#contact">Contact</a>
   </nav>
+  </div>
   <a class="brand" href="index.html" aria-label="Overflow — switch back to THEE_YMD personal side">
     <span class="nm">OVERFLOW</span>
     <span class="ul"></span>
   </a>
   <div class="right">
-    <button class="sky" data-act="toggleTheme" aria-label="Switch to dark mode">
+    <button class="sky sky-d" data-act="toggleTheme" aria-label="Switch to dark mode">
       <span class="sun"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"></path></svg></span>
       <span class="moon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"></path></svg></span>
     </button>
@@ -299,7 +308,7 @@ a{color:inherit}a:hover{color:inherit}
       <div><h4>Status</h4><span>[Taking projects from …]</span></div>
     </div>
     <div><a class="big" href="#contact">Start a project</a></div>
-    <div class="legal">© 2026 Overflow Creative Agency. All rights reserved.</div>
+    <div class="legal">© 2026 Overflow Creative Agency · Made by Amuro &amp; Klaus</div>
   </div>
 </footer>
 

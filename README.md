@@ -2,12 +2,17 @@
 
 Static prototype of Ayomide's portfolio (personal side + Overflow Creative Agency side). Every crossed box or dashed tag is a placeholder for real content.
 
-| Page | File | Reference |
+| Page | File | Notes |
 |---|---|---|
-| Personal home (About, Skills, Projects, Experience, Contact) | `index.html` | ajanwachuku.work |
-| Agency — Overflow | `overflow.html` | fourthcanvas.co |
-| Gallery | `gallery.html` | — |
-| Alternate layouts (Hero B, Projects B) | `alternates.html` | — |
+| Home | `index.html` | Intro, hero visual area, Trusted by, Skills, Featured Projects (filter), Fragments teaser, Experience |
+| Me | `me.html` | About + facts, Writings, Gallery (lightbox), Also Seen In |
+| Fragments | `fragments.html` | Captionless masonry, optional year/tool tag, lightbox |
+| Creative Direction | `creative-direction.html` | Coming soon + notify-me (not wired yet) + 30-day index layout |
+| Side Quests | `side-quests.html` | Minimal cards with role tags |
+| Overflow (agency) | `overflow.html` | FourthCanvas-style agency side |
+| Alternates | `alternates.html` | Hero B / Projects B layout options |
+
+Shared styles live in `css/site.css`, behaviour in `js/site.js`. Contact is the footer on every page (`#contact`).
 
 - Tap the centre name to switch between THEE_YMD and Overflow.
 - Sun / moon icon switches light and dark mode (remembered per side).
