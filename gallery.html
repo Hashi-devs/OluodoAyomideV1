@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — THEE_YMD</title>
+<meta name="description" content="Events, stages and behind the scenes.">
+<meta property="og:title" content="Gallery — THEE_YMD">
+<meta property="og:description" content="Events, stages and behind the scenes.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Thunder LC';src:url(fonts/Thunder-LC.ttf) format('truetype');font-display:swap}
+body{margin:0}
+a{color:inherit}a:hover{color:inherit}
+.root{--bg:#0A0A0A;--bg2:#111111;--ph:#191919;--line:#232323;--line2:#3B3B3B;--fg:#EDEDEA;--muted:#9B9A95;--accent:#FF5A1F;background:var(--bg);color:var(--fg);font-family:'Geist',system-ui,sans-serif;min-height:100vh;transition:background-color .7s ease,color .7s ease;-webkit-font-smoothing:antialiased}
+.root.t-light{--bg:#F3F1EC;--bg2:#EAE7E0;--ph:#E3DFD6;--line:#DCD7CD;--line2:#B5AFA3;--fg:#121212;--muted:#5B5954}
+.hdr{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:12px 32px;background:var(--bg);border-bottom:1px solid var(--line);transition:background-color .7s ease}
+.nav{display:flex;gap:24px;align-items:center}
+.nav a{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:12px 0}
+.nav a:hover,.nav a.cur{color:var(--fg)}
+.brand{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--fg);padding:2px 10px}
+.brand .nm{font-family:'Thunder LC','Geist',sans-serif;font-size:36px;line-height:.95;letter-spacing:.01em}
+.brand .ul{display:block;height:1px;width:26px;background:var(--fg);margin-top:7px;transition:width .35s ease}
+.brand:hover .ul,.brand:focus-visible .ul{width:100%}
+.right{display:flex;justify-content:flex-end;align-items:center;gap:6px}
+.menuBtn{display:none;width:44px;height:44px;padding:0;background:none;border:0;color:var(--fg);cursor:pointer;align-items:center;justify-content:center}
+.menuBtn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.sky{position:relative;width:44px;height:44px;border:0;background:none;overflow:hidden;cursor:pointer;padding:0;color:var(--fg)}
+.sky .sun,.sky .moon{position:absolute;left:10px;top:10px;width:24px;height:24px;transition:transform .9s cubic-bezier(.55,0,.2,1),opacity .9s ease}
+.sky svg{width:24px;height:24px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sky .sun svg{stroke:#FF6B1A}
+.sky .moon svg{stroke:currentColor}
+.t-dark .sky .sun{transform:translateY(34px);opacity:0}
+.sky .moon{transform:translateY(34px);opacity:0;transition-delay:.18s}
+.t-dark .sky .moon{transform:translateY(0);opacity:1}
+.head{max-width:1280px;margin:0 auto;padding:88px 32px 40px;box-sizing:border-box;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.head h1{font-family:'Thunder LC','Geist',sans-serif;font-size:clamp(80px,10vw,150px);line-height:.85;font-weight:400;margin:0}
+.head p{font-size:14px;line-height:1.6;color:var(--muted);max-width:320px;margin:0}
+.ph{position:relative;background:var(--ph);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph svg.x{position:absolute;inset:0;width:100%;height:100%}
+.ph svg.x line{stroke:var(--line2);stroke-width:1;vector-effect:non-scaling-stroke}
+.lb{position:relative;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--ph);padding:3px 7px}
+.gal{max-width:1280px;margin:0 auto;padding:0 32px 120px;box-sizing:border-box;columns:4 240px;column-gap:12px}
+.tile{display:block;width:100%;margin:0 0 12px;padding:0;border:0;background:none;cursor:zoom-in;break-inside:avoid}
+.tile .ph{width:100%}
+.tile.h1 .ph{height:230px}.tile.h2 .ph{height:340px}.tile.h3 .ph{height:270px}
+.tile:hover .ph{border-color:var(--fg)}
+.lbx{position:fixed;inset:0;z-index:60;background:rgba(5,5,5,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px}
+.lbx .ph{width:min(760px,90vw);height:min(520px,62vh);--ph:#1a1a1a;--line2:#444;--muted:#aaa}
+.lbbar{display:flex;gap:8px;align-items:center}
+.lbbar button{min-height:44px;min-width:44px;padding:0 14px;background:none;border:1px solid #444;color:#eee;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.lbbar span{font-family:'Geist Mono',monospace;font-size:11px;color:#aaa;padding:0 8px}
+.legal{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:22px 32px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.legal a{text-decoration:none}
+.mmenu{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;padding:16px 20px 32px;box-sizing:border-box}
+.mmenu .top{display:flex;justify-content:flex-end}
+.mmenu nav{display:flex;flex-direction:column;margin-top:40px}
+.mmenu nav a{font-family:'Thunder LC','Geist',sans-serif;font-size:68px;line-height:1.02;color:var(--fg);text-decoration:none}
+@media (max-width:760px){
+.nav a{display:none}.menuBtn{display:inline-flex}
+.hdr{padding:10px 14px}
+.brand .nm{font-size:30px}
+.head{padding:56px 16px 28px}
+.gal{padding:0 16px 72px;columns:2;column-gap:8px}
+.tile{margin-bottom:8px}
+.tile.h1 .ph{height:150px}.tile.h2 .ph{height:230px}.tile.h3 .ph{height:185px}
+.legal{padding:18px 16px}
+}
+@media (prefers-reduced-motion:reduce){.sky .sun,.sky .moon,.root{transition:none}}
+</style>
+</head>
+<body>
+<div data-side="personal" class="root t-dark"><script>(function(){try{var t=localStorage.getItem('theme-personal');if(t){var r=document.querySelector('.root');r.classList.remove('t-dark','t-light');r.classList.add(t);}}catch(e){}})();</script>
+<header class="hdr">
+  <nav class="nav" aria-label="Pages">
+    <a href="index.html">About</a>
+    <a href="index.html">Projects</a>
+    <a href="index.html">Experience</a>
+    <a class="cur" href="gallery.html">Gallery</a>
+    <a href="index.html">Contact</a>
+  </nav>
+  <a class="brand" href="overflow.html" aria-label="THEE_YMD — switch to the Overflow agency side">
+    <span class="nm">THEE_YMD</span>
+    <span class="ul"></span>
+  </a>
+  <div class="right">
+    <button class="sky" data-act="toggleTheme" aria-label="Switch to light mode">
+      <span class="sun"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"></path></svg></span>
+      <span class="moon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"></path></svg></span>
+    </button>
+    <button class="menuBtn" data-act="openMenu" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"></path></svg></button>
+  </div>
+</header>
+
+<div data-if="menu" hidden>
+  <div class="mmenu" role="dialog" aria-label="Menu">
+    <div class="top"><button class="menuBtn" style="display: inline-flex" data-act="closeMenu" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"></path></svg></button></div>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="index.html">Projects</a>
+      <a href="index.html">Experience</a>
+      <a href="gallery.html" data-act="closeMenu">Gallery</a>
+      <a href="index.html">Contact</a>
+      <a href="overflow.html">↔ Overflow</a>
+    </nav>
+  </div>
+</div>
+
+<section class="head">
+  <h1>Gallery</h1>
+  <p>Events, stages and behind the scenes. <span style="font-family: 'Geist Mono', monospace; font-size: 12px">[Optional one-line intro]</span></p>
+</section>
+
+<div class="gal">
+  
+    <button class="tile h2" data-act="lb:0" aria-label="Open Photo 1"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 1</span></div></button>
+  
+    <button class="tile h1" data-act="lb:1" aria-label="Open Photo 2"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 2</span></div></button>
+  
+    <button class="tile h3" data-act="lb:2" aria-label="Open Photo 3"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 3</span></div></button>
+  
+    <button class="tile h1" data-act="lb:3" aria-label="Open Photo 4"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 4</span></div></button>
+  
+    <button class="tile h3" data-act="lb:4" aria-label="Open Photo 5"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 5</span></div></button>
+  
+    <button class="tile h2" data-act="lb:5" aria-label="Open Photo 6"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 6</span></div></button>
+  
+    <button class="tile h1" data-act="lb:6" aria-label="Open Photo 7"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 7</span></div></button>
+  
+    <button class="tile h2" data-act="lb:7" aria-label="Open Photo 8"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 8</span></div></button>
+  
+    <button class="tile h3" data-act="lb:8" aria-label="Open Photo 9"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 9</span></div></button>
+  
+    <button class="tile h1" data-act="lb:9" aria-label="Open Photo 10"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 10</span></div></button>
+  
+    <button class="tile h2" data-act="lb:10" aria-label="Open Photo 11"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 11</span></div></button>
+  
+    <button class="tile h3" data-act="lb:11" aria-label="Open Photo 12"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Photo 12</span></div></button>
+  
+</div>
+
+<div data-if="lb" hidden>
+  <div class="lbx" role="dialog" aria-label="Photo viewer">
+    <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb"><span data-bind="lbLabel">Photo 1 / 12</span></span></div>
+    <div class="lbbar"><button data-act="prevLb" aria-label="Previous photo">←</button><span><span data-bind="lbLabel">Photo 1 / 12</span></span><button data-act="nextLb" aria-label="Next photo">→</button><button data-act="closeLb">Close</button></div>
+  </div>
+</div>
+
+<div class="legal"><a href="index.html">← Back to THEE_YMD</a><span>© 2026 THEE_YMD</span></div>
+</div>
+<script src="js/site.js"></script>
+</body>
+</html>

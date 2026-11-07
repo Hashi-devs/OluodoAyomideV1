@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overflow Creative Agency</title>
+<meta name="description" content="Overflow designs event brands and experiences. Lagos, Nigeria.">
+<meta property="og:title" content="Overflow Creative Agency">
+<meta property="og:description" content="Overflow designs event brands and experiences. Lagos, Nigeria.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Thunder LC';src:url(fonts/Thunder-LC.ttf) format('truetype');font-display:swap}
+body{margin:0}
+a{color:inherit}a:hover{color:inherit}
+.root{--bg:#FFFFFF;--bg2:#F1F1EF;--ph:#ECEBE7;--line:#E4E2DD;--line2:#B9B6AE;--fg:#0E0E0E;--muted:#6A6862;--soft:#8E8C86;--btn:#0E0E0E;--btnfg:#FFFFFF;background:var(--bg);color:var(--fg);font-family:'Geist',system-ui,sans-serif;min-height:100vh;transition:background-color .7s ease,color .7s ease;-webkit-font-smoothing:antialiased}
+.root.t-dark{--bg:#0B0B0B;--bg2:#141414;--ph:#1A1A1A;--line:#242424;--line2:#3D3D3D;--fg:#EEEEEA;--muted:#9C9A94;--soft:#86847E;--btn:#EEEEEA;--btnfg:#0B0B0B}
+.hdr{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:12px 40px;background:var(--bg);border-bottom:1px solid var(--line);transition:background-color .7s ease}
+.nav{display:flex;gap:36px;align-items:center}
+.nav a{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:12px 0}
+.nav a:hover{color:var(--fg)}
+.brand{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--fg);padding:2px 10px}
+.brand .nm{font-family:'Thunder LC','Geist',sans-serif;font-size:36px;line-height:.95;letter-spacing:.04em}
+.brand .ul{display:block;height:1px;width:26px;background:var(--fg);margin-top:7px;transition:width .35s ease}
+.brand:hover .ul,.brand:focus-visible .ul{width:100%}
+.right{display:flex;justify-content:flex-end;align-items:center;gap:8px}
+.cta{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;background:var(--btn);color:var(--btnfg);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.cta:hover{color:var(--btnfg);opacity:.85}
+.menuBtn{display:none;width:44px;height:44px;padding:0;background:none;border:0;color:var(--fg);cursor:pointer;align-items:center;justify-content:center}
+.menuBtn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.sky{position:relative;width:44px;height:44px;border:0;background:none;overflow:hidden;cursor:pointer;padding:0;color:var(--fg)}
+.sky .sun,.sky .moon{position:absolute;left:10px;top:10px;width:24px;height:24px;transition:transform .9s cubic-bezier(.55,0,.2,1),opacity .9s ease}
+.sky svg{width:24px;height:24px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sky .sun svg{stroke:#FF6B1A}
+.sky .moon svg{stroke:currentColor}
+.t-dark .sky .sun{transform:translateY(34px);opacity:0}
+.sky .moon{transform:translateY(34px);opacity:0;transition-delay:.18s}
+.t-dark .sky .moon{transform:translateY(0);opacity:1}
+.slot{background:var(--ph);border:1px dashed var(--line2);padding:0 8px;border-radius:2px;font-family:'Geist Mono',monospace;font-size:.42em;letter-spacing:.02em;vertical-align:middle;color:var(--fg);white-space:nowrap}
+.state{max-width:980px;padding:128px 48px 112px;box-sizing:border-box}
+.state h1{font-size:clamp(34px,4.6vw,62px);line-height:1.08;letter-spacing:-.035em;font-weight:400;margin:0}
+.state h1 .g{color:var(--soft)}
+.state h1 a.g{text-decoration:none}
+.state h1 a.g:hover{color:var(--fg)}
+.wbar{display:flex;justify-content:space-between;align-items:center;padding:0 40px 16px;gap:12px;flex-wrap:wrap}
+.wbar .k{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.seg{display:flex;border:1px solid var(--line2)}
+.seg button{min-height:36px;padding:0 14px;background:none;border:0;color:var(--muted);font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.seg button.on{background:var(--fg);color:var(--bg)}
+.ph{position:relative;background:var(--ph);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph svg.x{position:absolute;inset:0;width:100%;height:100%}
+.ph svg.x line{stroke:var(--line2);stroke-width:1;vector-effect:non-scaling-stroke}
+.lb{position:relative;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--ph);padding:3px 7px}
+.twos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{position:relative;display:block;text-decoration:none;color:var(--fg)}
+.twos .tile .ph{height:600px}
+.vl{position:absolute;top:50%;font-size:11px;letter-spacing:.32em;text-transform:uppercase;writing-mode:vertical-rl;transform:translateY(-50%);color:var(--fg);z-index:2}
+.vl.l{left:10px}
+.vl.r{right:10px}
+.ov{position:absolute;inset:0;background:rgba(8,8,8,.7);opacity:0;transition:opacity .35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:32px 44px;color:#F3F3EF;z-index:3}
+.ov .ot{font-size:28px;letter-spacing:-.03em}
+.ov .os{font-size:13px;line-height:1.55;color:#CFCFC9;margin-top:6px;max-width:380px}
+.tile:hover .ov,.tile:focus-visible .ov{opacity:1}
+.strip{display:flex;gap:12px;overflow-x:auto;padding:0 40px 24px;scroll-snap-type:x mandatory}
+.strip .tile{flex:0 0 420px;scroll-snap-align:start}
+.strip .tile .ph{height:560px}
+.cap{display:flex;justify-content:space-between;padding:10px 2px 0;font-size:12px}
+.cap span:last-child{color:var(--muted)}
+.meet{text-align:center;padding:136px 24px 120px}
+.meet h2{font-size:clamp(26px,3vw,40px);line-height:1.15;letter-spacing:-.03em;font-weight:400;margin:0 auto;max-width:760px}
+.meet h2 a{color:var(--soft);text-decoration:none}
+.meet h2 a:hover{color:var(--fg)}
+.meet .ph{width:min(560px,100%);height:320px;margin:40px auto 0}
+.blk{background:#000;color:#F2F2EE;padding:96px 0;overflow:hidden;--ph:#151515;--line2:#3A3A3A}
+.mrow{overflow:hidden}
+.track{display:flex;width:max-content;animation:mq 40s linear infinite}
+.track.rev{animation-direction:reverse}
+.mrow:hover .track{animation-play-state:paused}
+.lg{display:flex;align-items:center;gap:10px;padding:0 52px;font-size:20px;font-weight:600;letter-spacing:-.02em;white-space:nowrap;color:#F2F2EE}
+.lg .mk{width:24px;height:24px;border:1px dashed #555;border-radius:5px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.blk h2{text-align:center;font-size:clamp(26px,3vw,40px);line-height:1.15;letter-spacing:-.03em;font-weight:400;margin:120px auto;max-width:640px;padding:0 24px}
+.blk h2 a{color:#8D8B85;text-decoration:none}
+.blk h2 a:hover{color:#F2F2EE}
+.blk .slot{--ph:#151515;--line2:#4A4A4A;color:#F2F2EE}
+.foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.fun{background:var(--bg2);min-height:620px;display:flex;align-items:center;justify-content:center;padding:40px;box-sizing:border-box}
+.fun .ph{width:100%;max-width:420px;height:340px;border:1px dashed var(--line2);flex-direction:column;gap:10px;background:transparent}
+.fun .ph .lb{background:transparent}
+.fun .sub{font-family:'Geist Mono',monospace;font-size:10px;color:var(--muted);text-align:center;line-height:1.7;max-width:260px}
+.fr{padding:28px 48px 20px;display:flex;flex-direction:column;justify-content:space-between;gap:56px;box-sizing:border-box}
+.fcols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;max-width:360px}
+.fcols h4{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin:0 0 6px}
+.fcols a,.fcols span{display:block;font-size:11.5px;color:var(--muted);text-decoration:none;line-height:1.75}
+.fcols a:hover{color:var(--fg)}
+.big{font-size:30px;letter-spacing:-.03em;color:var(--fg);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px}
+.legal{font-size:9.5px;color:var(--muted);letter-spacing:.02em}
+.mmenu{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;padding:16px 20px 32px;box-sizing:border-box}
+.mmenu .top{display:flex;justify-content:flex-end}
+.mmenu nav{display:flex;flex-direction:column;margin-top:40px}
+.mmenu nav a{font-family:'Thunder LC','Geist',sans-serif;font-size:68px;line-height:1.02;color:var(--fg);text-decoration:none}
+@media (max-width:900px){
+.foot{grid-template-columns:1fr}
+.fun{min-height:360px}
+.fr{padding:40px 20px 24px}
+.twos .tile .ph{height:440px}
+}
+@media (max-width:760px){
+.nav a,.cta{display:none}
+.slot{white-space:normal}.menuBtn{display:inline-flex;align-items:center}
+.hdr{padding:10px 14px}
+.brand .nm{font-size:30px}
+.state{padding:72px 20px 64px}
+.twos{grid-template-columns:1fr}
+.twos .tile .ph{height:420px}
+.strip{padding:0 16px 20px}
+.strip .tile{flex-basis:78vw}
+.wbar{padding:0 16px 14px}
+.blk{padding:64px 0}
+.blk h2{margin:72px auto}
+}
+@media (prefers-reduced-motion:reduce){
+.track{animation:none}
+.sky .sun,.sky .moon,.root,.ov{transition:none}
+}
+</style>
+</head>
+<body>
+<div data-side="agency" class="root t-light"><script>(function(){try{var t=localStorage.getItem('theme-agency');if(t){var r=document.querySelector('.root');r.classList.remove('t-dark','t-light');r.classList.add(t);}}catch(e){}})();</script>
+
+<header class="hdr">
+  <nav class="nav" aria-label="Agency sections">
+    <a href="#work">Work</a>
+    <a href="#studio">Studio</a>
+    <a href="#brands">Brands</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="brand" href="index.html" aria-label="Overflow — switch back to THEE_YMD personal side">
+    <span class="nm">OVERFLOW</span>
+    <span class="ul"></span>
+  </a>
+  <div class="right">
+    <button class="sky" data-act="toggleTheme" aria-label="Switch to dark mode">
+      <span class="sun"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"></path></svg></span>
+      <span class="moon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"></path></svg></span>
+    </button>
+    <a class="cta" href="#contact">Start a project</a>
+    <button class="menuBtn" data-act="openMenu" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"></path></svg></button>
+  </div>
+</header>
+
+<div data-if="menu" hidden>
+  <div class="mmenu" role="dialog" aria-label="Menu">
+    <div class="top"><button class="menuBtn" style="display: inline-flex" data-act="closeMenu" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"></path></svg></button></div>
+    <nav>
+      <a href="#work" data-act="closeMenu">Work</a>
+      <a href="#studio" data-act="closeMenu">Studio</a>
+      <a href="#brands" data-act="closeMenu">Brands</a>
+      <a href="#contact" data-act="closeMenu">Start a project</a>
+      <a href="index.html">↔ THEE_YMD</a>
+    </nav>
+  </div>
+</div>
+
+<section class="state">
+  <h1>Overflow designs the brands and experiences behind <span class="slot">kind of events</span> people remember. Our work includes <a class="g" href="#work">[Client one]</a>, <a class="g" href="#work">[Client two]</a>, and <a class="g" href="#work">[Client three]</a>.</h1>
+</section>
+
+<div id="work">
+  <div class="wbar">
+    <span class="k">Selected work</span>
+    <div class="seg" role="group" aria-label="Work layout">
+      <button class="on" data-act="setTwos" aria-pressed="true">In twos</button>
+      <button class="" data-act="setScroll" aria-pressed="false">Scroll</button>
+    </div>
+  </div>
+
+  <div data-if="twos">
+    <div class="twos">
+      
+        <a class="tile" href="#work">
+          <span class="vl l">[Client 01]</span><span class="vl r">Event branding</span>
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span></div>
+          <div class="ov"><div class="ot">[Client 01]</div><div class="os">[One-line result for this project]</div></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <span class="vl l">[Client 02]</span><span class="vl r">Experience</span>
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span></div>
+          <div class="ov"><div class="ot">[Client 02]</div><div class="os">[One-line result for this project]</div></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <span class="vl l">[Client 03]</span><span class="vl r">Identity</span>
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span></div>
+          <div class="ov"><div class="ot">[Client 03]</div><div class="os">[One-line result for this project]</div></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <span class="vl l">[Client 04]</span><span class="vl r">Campaign</span>
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span></div>
+          <div class="ov"><div class="ot">[Client 04]</div><div class="os">[One-line result for this project]</div></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <span class="vl l">[Client 05]</span><span class="vl r">Event branding</span>
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span></div>
+          <div class="ov"><div class="ot">[Client 05]</div><div class="os">[One-line result for this project]</div></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <span class="vl l">[Client 06]</span><span class="vl r">Experience</span>
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span></div>
+          <div class="ov"><div class="ot">[Client 06]</div><div class="os">[One-line result for this project]</div></div>
+        </a>
+      
+    </div>
+  </div>
+  <div data-if="scroll" hidden>
+    <div class="strip">
+      
+        <a class="tile" href="#work">
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span>
+            <div class="ov"><div class="ot">[Client 01]</div><div class="os">[One-line result for this project]</div></div>
+          </div>
+          <div class="cap"><span>[Client 01]</span><span>Event branding</span></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span>
+            <div class="ov"><div class="ot">[Client 02]</div><div class="os">[One-line result for this project]</div></div>
+          </div>
+          <div class="cap"><span>[Client 02]</span><span>Experience</span></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span>
+            <div class="ov"><div class="ot">[Client 03]</div><div class="os">[One-line result for this project]</div></div>
+          </div>
+          <div class="cap"><span>[Client 03]</span><span>Identity</span></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span>
+            <div class="ov"><div class="ot">[Client 04]</div><div class="os">[One-line result for this project]</div></div>
+          </div>
+          <div class="cap"><span>[Client 04]</span><span>Campaign</span></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span>
+            <div class="ov"><div class="ot">[Client 05]</div><div class="os">[One-line result for this project]</div></div>
+          </div>
+          <div class="cap"><span>[Client 05]</span><span>Event branding</span></div>
+        </a>
+      
+        <a class="tile" href="#work">
+          <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Case study image</span>
+            <div class="ov"><div class="ot">[Client 06]</div><div class="os">[One-line result for this project]</div></div>
+          </div>
+          <div class="cap"><span>[Client 06]</span><span>Experience</span></div>
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+<section class="meet" id="studio">
+  <h2>We put <span class="slot">what Overflow puts first</span> at the centre of every event, launch and campaign. <a href="#studio">Meet Overflow</a></h2>
+  <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Team / on-stage photo</span></div>
+</section>
+
+<section class="blk" id="brands" aria-label="Brands we have worked with">
+  <div class="mrow">
+    <div class="track">
+      <div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div>
+      <div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div>
+    </div>
+  </div>
+  <h2><span class="slot">Agency line, e.g. the moment is the brand</span> <a href="#work">Explore our work</a></h2>
+  <div class="mrow">
+    <div class="track rev">
+      <div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div><div class="lg"><span class="mk"></span>[Brand]</div>
+      <div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div><div class="lg" aria-hidden="true"><span class="mk"></span>[Brand]</div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot" id="contact">
+  <div class="fun">
+    <div class="ph"><span class="lb">Fun corner — gimmick TBD</span><span class="sub">FourthCanvas runs a Lagos / London clock here. Overflow's version: Ayomide to decide.</span></div>
+  </div>
+  <div class="fr">
+    <div class="fcols">
+      <div><h4>Sitemap</h4><a href="#work">Work</a><a href="#studio">Studio</a><a href="#brands">Brands</a><a href="index.html">THEE_YMD</a></div>
+      <div><h4>Social</h4><a href="#contact">X.com</a><a href="#contact">Instagram</a><a href="#contact">LinkedIn</a></div>
+      <div><h4>Contact</h4><span>[hello@overflow…]</span><span>Lagos, Nigeria</span></div>
+      <div><h4>Status</h4><span>[Taking projects from …]</span></div>
+    </div>
+    <div><a class="big" href="#contact">Start a project</a></div>
+    <div class="legal">© 2026 Overflow Creative Agency. All rights reserved.</div>
+  </div>
+</footer>
+
+</div>
+<script src="js/site.js"></script>
+</body>
+</html>

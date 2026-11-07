@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alternate layouts — THEE_YMD</title>
+<meta name="description" content="Hero option B and projects option B.">
+<meta property="og:title" content="Alternate layouts — THEE_YMD">
+<meta property="og:description" content="Hero option B and projects option B.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Thunder LC';src:url(fonts/Thunder-LC.ttf) format('truetype');font-display:swap}
+body{margin:0}
+a{color:inherit}a:hover{color:inherit}
+.root{--bg:#0A0A0A;--bg2:#111111;--ph:#191919;--line:#232323;--line2:#3B3B3B;--fg:#EDEDEA;--muted:#9B9A95;--accent:#FF5A1F;background:var(--bg);color:var(--fg);font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.tag{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);padding:28px 32px 0;margin:0}
+.ph{position:relative;background:var(--ph);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph svg.x{position:absolute;inset:0;width:100%;height:100%}
+.ph svg.x line{stroke:var(--line2);stroke-width:1;vector-effect:non-scaling-stroke}
+.lb{position:relative;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--ph);padding:3px 7px}
+.slot{color:var(--fg);background:var(--ph);border:1px dashed var(--line2);padding:1px 6px;border-radius:2px;font-family:'Geist Mono',monospace;font-size:.78em;white-space:nowrap}
+.heroB{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center;max-width:1180px;margin:0 auto;padding:72px 32px 120px;box-sizing:border-box}
+.frame{background:#F5F3EE;padding:14px;transform:rotate(-2deg);box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.frame .ph{height:520px;--ph:#DCD8CF;--line2:#B1AB9F;--muted:#55534E}
+.big{font-family:'Thunder LC','Geist',sans-serif;font-size:clamp(72px,9vw,140px);line-height:.88;margin:0 0 28px;letter-spacing:.005em}
+.heroB p{font-size:17px;line-height:1.62;color:var(--muted);margin:0 0 20px;max-width:560px}
+.heroB .hi{color:var(--fg)}
+.heroB a.u{color:var(--fg);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);margin-top:36px;max-width:560px}
+.facts div{padding:14px 0 0}
+.facts .k{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.facts .v{font-size:14px;margin-top:6px}
+.projB{background:var(--bg2);border-top:1px solid var(--line);padding:0 0 120px}
+.projB .in{max-width:1280px;margin:0 auto;padding:56px 32px 0;box-sizing:border-box}
+.projB h2{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;margin:0 0 14px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.projB .lead{font-size:30px;line-height:1.2;letter-spacing:-.03em;max-width:780px;margin:0 0 56px;color:var(--fg)}
+.projB .lead span.m{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 20px}
+.pc .ph{aspect-ratio:4/3}
+.pc .row{display:flex;justify-content:space-between;margin-top:14px;font-size:14px;font-weight:500}
+.pc .row span:last-child{font-family:'Geist Mono',monospace;font-size:11px;color:var(--muted);font-weight:400}
+.pc p{font-size:13px;line-height:1.55;color:var(--muted);margin:8px 0 0}
+@media (max-width:860px){
+.heroB{grid-template-columns:1fr;gap:40px;padding:48px 18px 72px}
+.frame .ph{height:380px}
+.grid3{grid-template-columns:1fr}
+.slot{white-space:normal}
+.projB .in{padding:40px 18px 0}
+.projB .lead{font-size:22px}
+.tag{padding:24px 18px 0}
+}
+</style>
+</head>
+<body>
+<div class="root">
+  <p class="tag">Hero — option B: framed portrait beside the about</p>
+  <section class="heroB">
+    <div class="frame"><div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Portrait</span></div></div>
+    <div>
+      <h1 class="big">THEE_YMD</h1>
+      <p><span class="hi">Hi, I'm <span class="slot">Name as it should appear</span>.</span> <span class="slot">One-line positioning: event branding + experience design</span>, through <a class="u" href="#">Overflow Creative Agency</a>.</p>
+      <p><span class="slot">Short bio — ~100 words from Ayomide</span></p>
+      <div class="facts">
+        <div><div class="k">Based</div><div class="v">Lagos, Nigeria</div></div>
+        <div><div class="k">Runs</div><div class="v">Overflow</div></div>
+        <div><div class="k">Status</div><div class="v">[Availability]</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projB">
+    <p class="tag">Projects — option B: heading, sub-about, then the grid</p>
+    <div class="in">
+      <h2><span class="dot"></span>Projects</h2>
+      <p class="lead">Event brands, identities and campaigns. <span class="m">[Sub-about — one or two lines on how Ayomide approaches the work.]</span></p>
+      <div class="grid3">
+        
+          <article class="pc">
+            <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Project cover</span></div>
+            <div class="row"><span>Project 01</span><span>Events · 2026</span></div>
+            <p>[Short description — what it was and the one-line result.]</p>
+          </article>
+        
+          <article class="pc">
+            <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Project cover</span></div>
+            <div class="row"><span>Project 02</span><span>Brand identity · 2025</span></div>
+            <p>[Short description — what it was and the one-line result.]</p>
+          </article>
+        
+          <article class="pc">
+            <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Project cover</span></div>
+            <div class="row"><span>Project 03</span><span>Campaigns · 2025</span></div>
+            <p>[Short description — what it was and the one-line result.]</p>
+          </article>
+        
+          <article class="pc">
+            <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Project cover</span></div>
+            <div class="row"><span>Project 04</span><span>Events · 2025</span></div>
+            <p>[Short description — what it was and the one-line result.]</p>
+          </article>
+        
+          <article class="pc">
+            <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Project cover</span></div>
+            <div class="row"><span>Project 05</span><span>Brand identity · 2024</span></div>
+            <p>[Short description — what it was and the one-line result.]</p>
+          </article>
+        
+          <article class="pc">
+            <div class="ph"><svg class="x" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 100 100"><line x1="0" y1="0" x2="100" y2="100"></line><line x1="100" y1="0" x2="0" y2="100"></line></svg><span class="lb">Project cover</span></div>
+            <div class="row"><span>Project 06</span><span>Campaigns · 2024</span></div>
+            <p>[Short description — what it was and the one-line result.]</p>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+</div>
+<script src="js/site.js"></script>
+</body>
+</html>
