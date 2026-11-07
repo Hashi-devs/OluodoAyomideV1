@@ -19,20 +19,10 @@
   syncThemeLabel();
 
   // ---- Projects filter ----
-  var cols = document.querySelectorAll('.cols .col');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.cols .card'));
-  cards.sort(function (a, b) { return (+a.style.order) - (+b.style.order); });
   function applyFilter(tag) {
-    if (cols.length < 2) return;
-    var shA = ['tall', 'wide', 'tall'], shB = ['wide', 'tall', 'wide'], na = 0, nb = 0;
-    cards.forEach(function (c) { c.remove(); });
-    cards.filter(function (c) { return tag === 'All' || c.getAttribute('data-tag') === tag; })
-      .forEach(function (c, i) {
-        var box = c.querySelector('.cimg');
-        c.style.order = i;
-        if (i % 2 === 0) { box.className = 'cimg ' + shA[na++ % 3]; cols[0].appendChild(c); }
-        else { box.className = 'cimg ' + shB[nb++ % 3]; cols[1].appendChild(c); }
-      });
+    document.querySelectorAll('.pgrid .card').forEach(function (c) {
+      c.hidden = !(tag === 'All' || c.getAttribute('data-tag') === tag);
+    });
     document.querySelectorAll('.chip').forEach(function (ch) {
       var on = ch.textContent.trim() === tag;
       ch.classList.toggle('on', on);

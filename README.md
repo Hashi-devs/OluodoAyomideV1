@@ -10,7 +10,6 @@ Static prototype of Ayomide's portfolio (personal side + Overflow Creative Agenc
 | Creative Direction | `creative-direction.html` | Coming soon + notify-me (not wired yet) + 30-day index layout |
 | Side Quests | `side-quests.html` | Minimal cards with role tags |
 | Overflow (agency) | `overflow.html` | FourthCanvas-style agency side |
-| Alternates | `alternates.html` | Hero B / Projects B layout options |
 
 Shared styles live in `css/site.css`, behaviour in `js/site.js`. Contact is the footer on every page (`#contact`).
 
